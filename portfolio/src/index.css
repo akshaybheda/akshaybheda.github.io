@@ -3,8 +3,3 @@ html, body, #root {
   margin: 0;
   max-width: 100%;
 } 
-
-#root {
-  padding: 1rem;
-  text-align: center;
-}

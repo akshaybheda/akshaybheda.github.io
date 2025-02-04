@@ -6,13 +6,16 @@ import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import { useColorScheme } from "@mui/material/styles";
+import Layout from "./Layout";
 
 function Homepage() {
   const { mode, setMode } = useColorScheme();
   if (!mode) {
     return null;
   }
+  
   return (
+    <Layout>
     <Box
       sx={{
         display: "flex",
@@ -44,6 +47,7 @@ function Homepage() {
         </RadioGroup>
       </FormControl>
     </Box>
+    </Layout>
   );
 }
 

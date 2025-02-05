@@ -9,7 +9,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useColorScheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import { LightModeOutlined } from "@mui/icons-material";
-const pages = ["Home", "Projects", "Contact Me"];
+const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Contact Me"];
 
 function Navbar() {
   const { mode, setMode } = useColorScheme();
@@ -24,10 +24,15 @@ function Navbar() {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth={false} >
+      <Container maxWidth={false}>
         <Toolbar
           disableGutters
-          sx={{justifyContent: "space-between", display: "flex", ml: 0, mr: 0}}
+          sx={{
+            justifyContent: "space-between",
+            display: "flex",
+            ml: 0,
+            mr: 0,
+          }}
         >
           <AdbIcon sx={{ display: { md: "flex" }, mr: 1 }} />
           <Typography
@@ -68,13 +73,18 @@ function Navbar() {
           <Box
             sx={{
               flexGrow: 1,
-              display: { md: "flex", justifyContent: "center" },
+              display: { md: "flex", justifyContent: "start" },
             }}
           >
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={() => {}}
+                onClick={() => {
+                  document.getElementById(page)?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}

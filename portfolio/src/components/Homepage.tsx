@@ -20,7 +20,7 @@ function Homepage() {
       <Grid2 container spacing={4} maxWidth="lg" alignItems="center">
         <Grid2 size={6}>
           <Typography
-            variant="h3"
+            variant="h1"
             component="h1"
             fontWeight="bold"
             gutterBottom

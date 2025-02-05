@@ -2,6 +2,8 @@ import Box from "@mui/material/Box";
 import "./Homepage.css";
 import { Typography, Button, Paper, useTheme } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
+import MyPic from '../assets/image.jpg';
+
 function Homepage() {
   const theme = useTheme();
 
@@ -49,7 +51,7 @@ function Homepage() {
           >
             <Box
               component="img"
-              src="src/assets/image.jpg"
+              src={MyPic}
               alt="Akshay Bheda"
               sx={{ width: "100%", height:"600px", objectFit: "cover" }}
             />

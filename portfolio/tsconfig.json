@@ -4,6 +4,8 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "resolveJsonModule": true,
+  "compilerOptions": {
+    "resolveJsonModule": true,
+  },
   "esModuleInterop": true
 }

@@ -8,8 +8,14 @@ import AdbIcon from "@mui/icons-material/Adb";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useColorScheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import { LightModeOutlined } from "@mui/icons-material";
-const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Contact Me"];
+import {
+  GitHub,
+  LightModeOutlined,
+  LinkedIn,
+  Phone,
+} from "@mui/icons-material";
+const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Resume"];
+import Resume from "../assets/resume.pdf";
 
 function Navbar() {
   const { mode, setMode } = useColorScheme();
@@ -52,24 +58,6 @@ function Navbar() {
           >
             Akshay Bheda
           </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box
             sx={{
               flexGrow: 1,
@@ -80,10 +68,14 @@ function Navbar() {
               <Button
                 key={page}
                 onClick={() => {
-                  document.getElementById(page)?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  if (page === "Resume") {
+                    window.open(Resume, "_blank");
+                  } else {
+                    document.getElementById(page)?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -96,6 +88,16 @@ function Navbar() {
               display: { justifyContent: "end" },
             }}
           >
+            <IconButton href="tel:+1-980-358-0053">
+              <Phone />
+            </IconButton>
+
+            <IconButton href="https://www.linkedin.com/in/akshaybheda/">
+              <LinkedIn />
+            </IconButton>
+            <IconButton href="https://github.com/akshaybheda">
+              <GitHub />
+            </IconButton>
             <IconButton onClick={toggleDarkMode}>
               {mode == "light" ? <DarkModeIcon /> : <LightModeOutlined />}
             </IconButton>

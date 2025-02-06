@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import { Typography, Button, Paper, useTheme } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import MyPic from "../../assets/image.jpg";
+import Resume from "../../assets/resume.pdf";
 
 export default function MainContent() {
   const theme = useTheme();
@@ -37,7 +38,7 @@ export default function MainContent() {
             <Button variant="outlined" color="primary">
               VIEW PROJECTS
             </Button>
-            <Button variant="text" color="primary">
+            <Button variant="outlined" color="primary" onClick={() => window.open(Resume, "_blank")}>
               VIEW RESUME
             </Button>
           </Box>

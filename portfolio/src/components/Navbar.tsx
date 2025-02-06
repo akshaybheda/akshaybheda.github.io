@@ -8,6 +8,8 @@ import AdbIcon from "@mui/icons-material/Adb";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useColorScheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
+import MenuIcon from '@mui/icons-material/Menu';
+
 import {
   GitHub,
   LightModeOutlined,
@@ -16,8 +18,18 @@ import {
 } from "@mui/icons-material";
 const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Resume"];
 import Resume from "../assets/resume.pdf";
+import Menu from "@mui/material/Menu";
+import React from "react";
 
 function Navbar() {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
   const { mode, setMode } = useColorScheme();
   if (!mode) {
     return null;
@@ -40,7 +52,7 @@ function Navbar() {
             mr: 0,
           }}
         >
-          <AdbIcon sx={{ display: { md: "flex" }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -48,7 +60,7 @@ function Navbar() {
             href=""
             sx={{
               mr: 1,
-              display: { md: "flex" },
+              display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -58,10 +70,57 @@ function Navbar() {
           >
             Akshay Bheda
           </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: "block", md: "none" } }}
+            >
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={() => {
+                    if (page === "Resume") {
+                      window.open(Resume, "_blank");
+                    } else {
+                      document.getElementById(page)?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                </Button>
+              ))}
+            </Menu>
+          </Box>
           <Box
             sx={{
               flexGrow: 1,
-              display: { md: "flex", justifyContent: "start" },
+              display: { xs: "none", md: "flex", justifyContent: "start" },
             }}
           >
             {pages.map((page) => (

@@ -2,7 +2,12 @@ import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import { ProjectsData } from "./data/ProjectsData";
 import ProjectCard from "./ProjectCard";
+import { useEffect } from "react";
 export default function Project() {
+    //TODO: work on the page management
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const theme = useTheme();
   return (
     <Box

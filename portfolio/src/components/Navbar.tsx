@@ -104,14 +104,14 @@ function Navbar() {
                   key={page}
                   onClick={() => {
                     if (page === "Resume") {
-                      window.open(Resume, "_blank");
+                      window.open(Resume, "_blank"); // Open resume in new tab
                     } else if (page === "Projects") {
-                      window.location.href = "/project";
+                      window.location.hash = "#/project"; // Use hash-based navigation
                     } else {
-                      if (window.location.pathname !== "/") {
+                      if (window.location.hash !== "#/") {
                         // Store target section in sessionStorage
                         sessionStorage.setItem("scrollTo", page);
-                        window.location.href = "/";
+                        window.location.hash = "#/"; // Redirect to homepage
                       } else {
                         document.getElementById(page)?.scrollIntoView({
                           behavior: "smooth",
@@ -120,6 +120,7 @@ function Navbar() {
                       }
                     }
                   }}
+                  
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   <Typography sx={{ textAlign: "center" }}>{page}</Typography>
@@ -138,14 +139,14 @@ function Navbar() {
                 key={page}
                 onClick={() => {
                   if (page === "Resume") {
-                    window.open(Resume, "_blank");
+                    window.open(Resume, "_blank"); // Open resume in new tab
                   } else if (page === "Projects") {
-                    window.location.href = "/project";
+                    window.location.hash = "#/project"; // Use hash-based navigation
                   } else {
-                    if (window.location.pathname !== "/") {
+                    if (window.location.hash !== "#/") {
                       // Store target section in sessionStorage
                       sessionStorage.setItem("scrollTo", page);
-                      window.location.href = "/";
+                      window.location.hash = "#/"; // Redirect to homepage
                     } else {
                       document.getElementById(page)?.scrollIntoView({
                         behavior: "smooth",
@@ -154,6 +155,7 @@ function Navbar() {
                     }
                   }
                 }}
+                
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}

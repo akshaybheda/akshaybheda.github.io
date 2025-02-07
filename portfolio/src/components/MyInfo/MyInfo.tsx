@@ -10,16 +10,20 @@ export default function MainContent() {
 
   useEffect(() => {
     const scrollTo = sessionStorage.getItem("scrollTo");
-
-    if (scrollTo) {
-      const element = document.getElementById(scrollTo);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      // Clear storage after using it
-      sessionStorage.removeItem("scrollTo");
+  
+    if (scrollTo && window.location.hash === "#/") {
+      setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        sessionStorage.removeItem("scrollTo");
+      }, 100);
+    } else if (window.location.hash === "#/project") {
+      // Force scroll to top when navigating to /project
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, []);
+  }, [window.location.hash]);
   
   return (
     <Box

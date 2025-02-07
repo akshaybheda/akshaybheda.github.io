@@ -3,9 +3,24 @@ import { Typography, Button, Paper, useTheme } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import MyPic from "../../assets/image.jpg";
 import Resume from "../../assets/resume.pdf";
+import { useEffect } from "react";
 
 export default function MainContent() {
   const theme = useTheme();
+
+  useEffect(() => {
+    const scrollTo = sessionStorage.getItem("scrollTo");
+
+    if (scrollTo) {
+      const element = document.getElementById(scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      // Clear storage after using it
+      sessionStorage.removeItem("scrollTo");
+    }
+  }, []);
+  
   return (
     <Box
       id="Home"

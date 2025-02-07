@@ -8,7 +8,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useColorScheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 
 import {
   GitHub,
@@ -22,7 +22,9 @@ import Menu from "@mui/material/Menu";
 import React from "react";
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -71,7 +73,7 @@ function Navbar() {
             Akshay Bheda
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-          <IconButton
+            <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -103,11 +105,16 @@ function Navbar() {
                   onClick={() => {
                     if (page === "Resume") {
                       window.open(Resume, "_blank");
+                    } else if (page === "Projects") {
+                      window.location.href = "/project";
                     } else {
-                      document.getElementById(page)?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
+                      window.location.href = `/`;
+                      setTimeout(() => {
+                        document.getElementById(page)?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }, 100);
                     }
                   }}
                   sx={{ my: 2, color: "white", display: "block" }}
@@ -129,11 +136,19 @@ function Navbar() {
                 onClick={() => {
                   if (page === "Resume") {
                     window.open(Resume, "_blank");
+                  } else if (page === "Projects") {
+                    window.location.href = "/project";
                   } else {
-                    document.getElementById(page)?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
+                    if (window.location.pathname !== "/") {
+                      // Store target section in sessionStorage
+                      sessionStorage.setItem("scrollTo", page);
+                      window.location.href = "/";
+                    } else {
+                      document.getElementById(page)?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
                   }
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
@@ -150,7 +165,6 @@ function Navbar() {
             <IconButton href="tel:+1-980-358-0053">
               <Phone />
             </IconButton>
-
             <IconButton href="https://www.linkedin.com/in/akshaybheda/">
               <LinkedIn />
             </IconButton>

@@ -108,13 +108,16 @@ function Navbar() {
                     } else if (page === "Projects") {
                       window.location.href = "/project";
                     } else {
-                      window.location.href = `/`;
-                      setTimeout(() => {
+                      if (window.location.pathname !== "/") {
+                        // Store target section in sessionStorage
+                        sessionStorage.setItem("scrollTo", page);
+                        window.location.href = "/";
+                      } else {
                         document.getElementById(page)?.scrollIntoView({
                           behavior: "smooth",
                           block: "start",
                         });
-                      }, 100);
+                      }
                     }
                   }}
                   sx={{ my: 2, color: "white", display: "block" }}

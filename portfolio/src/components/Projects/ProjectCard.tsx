@@ -55,7 +55,7 @@ export default function ProjectCard(props: ProjectInfo) {
   };
 
   return (
-    <Grid container spacing={2} maxWidth={"lg"} margin={2}>
+    <Grid container spacing={2} margin={2}>
       <Grid size={12}>
         <Card>
           <CardHeader title={Title} />

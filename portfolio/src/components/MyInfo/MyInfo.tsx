@@ -40,13 +40,19 @@ export default function MainContent() {
         paddingRight: { xs: 2, md: 3 },
       }}
     >
-      <Grid2 container spacing={4} maxWidth={{ md: "lg" }} alignItems="center">
+      <Grid2
+        container
+        spacing={4}
+        maxWidth={{ md: "lg" }}
+        alignItems="center"
+      >
         <Grid2 size={{ xs: 12, md: 6 }}>
           <Typography
             variant="h1"
             component="h1"
             fontWeight="bold"
             gutterBottom
+            fontSize={{ xs: "h2.fontSize", md: "h1.fontSize" }}
           >
             Curious Developer
           </Typography>

@@ -10,7 +10,7 @@ export default function MainContent() {
 
   useEffect(() => {
     const scrollTo = sessionStorage.getItem("scrollTo");
-  
+
     if (scrollTo && window.location.hash === "#/") {
       setTimeout(() => {
         const element = document.getElementById(scrollTo);
@@ -24,22 +24,24 @@ export default function MainContent() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [window.location.hash]);
-  
+
   return (
     <Box
       id="Home"
       sx={{
-        minHeight: "100vh",
+        minHeight: { md: "80vh" },
         bgcolor: theme.palette.background.default,
         color: theme.palette.text.primary,
-        p: 4,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        paddingTop: "4rem",
+        paddingLeft: { xs: 2, md: 3 },
+        paddingRight: { xs: 2, md: 3 },
       }}
     >
-      <Grid2 container spacing={4} maxWidth="lg" alignItems="center">
-        <Grid2 size={6}>
+      <Grid2 container spacing={4} maxWidth={{ md: "lg" }} alignItems="center">
+        <Grid2 size={{ xs: 12, md: 6 }}>
           <Typography
             variant="h1"
             component="h1"
@@ -48,21 +50,35 @@ export default function MainContent() {
           >
             Curious Developer
           </Typography>
-          <Typography variant="body1" color="text.secondary" gutterBottom>
-            Hey there! Call me Akshay. I enjoy creating kickass websites and
-            performance backend systems, ones that suit your desires and needs
-            using latest technologies and cleanest design patterns.
+          <Typography variant="body1" gutterBottom align="justify">
+            Hey there! I love building scalable web applications and
+            high-performance backend systems, ensuring they are efficient,
+            maintainable, and secure. I work primarily with .NET on the backend
+            and React on the frontend, following clean architecture principles
+            and modern best practices. I’m a firm believer in writing
+            tests—Playwright for integration, Jest/xUnit for unit tests, and k6
+            (Grafana) for performance benchmarking. Beyond coding, I enjoy
+            tackling complex problems, optimizing performance, and continuously
+            learning new technologies to stay ahead.
           </Typography>
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
-            <Button variant="outlined" color="primary">
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => (window.location.hash = "#/project")}
+            >
               VIEW PROJECTS
             </Button>
-            <Button variant="outlined" color="primary" onClick={() => window.open(Resume, "_blank")}>
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => window.open(Resume, "_blank")}
+            >
               VIEW RESUME
             </Button>
           </Box>
         </Grid2>
-        <Grid2 size={6}>
+        <Grid2 display={{ xs: "none", md: "block" }} size={{ md: 6 }}>
           <Paper
             variant="elevation"
             elevation={12}

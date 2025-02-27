@@ -4,7 +4,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import AdbIcon from "@mui/icons-material/Adb";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useColorScheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
@@ -20,6 +19,7 @@ const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Resume"];
 import Resume from "../assets/resume.pdf";
 import Menu from "@mui/material/Menu";
 import React from "react";
+import { SiteIcon } from "../assets/FavIcon";
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -54,12 +54,12 @@ function Navbar() {
             mr: 0,
           }}
         >
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <SiteIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href=""
+            href="#/"
             sx={{
               mr: 1,
               display: { xs: "none", md: "flex" },
@@ -120,7 +120,6 @@ function Navbar() {
                       }
                     }
                   }}
-                  
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   <Typography sx={{ textAlign: "center" }}>{page}</Typography>
@@ -155,7 +154,6 @@ function Navbar() {
                     }
                   }
                 }}
-                
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}

@@ -60,11 +60,9 @@ export default function ProjectCard(props: ProjectInfo) {
         <Card>
           <CardHeader title={Title} />
           <CardContent>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              {Description}
-            </Typography>
+            <Typography variant="body1">{Description}</Typography>
           </CardContent>
-          <CardActions disableSpacing>
+          <CardActions title="Learn More!" disableSpacing sx={{padding: 0}}>
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
@@ -76,9 +74,21 @@ export default function ProjectCard(props: ProjectInfo) {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              {AdditionalText1 && <Typography sx={{ marginBottom: 2 }}>{AdditionalText1}</Typography>}
-              {AdditionalText2 && <Typography sx={{ marginBottom: 2 }}>{AdditionalText2}</Typography>}
-              {AdditionalText3 && <Typography sx={{ marginBottom: 2 }}>{AdditionalText3}</Typography>}
+              {AdditionalText1 && (
+                <Typography sx={{ marginBottom: 2 }}>
+                  {AdditionalText1}
+                </Typography>
+              )}
+              {AdditionalText2 && (
+                <Typography sx={{ marginBottom: 2 }}>
+                  {AdditionalText2}
+                </Typography>
+              )}
+              {AdditionalText3 && (
+                <Typography sx={{ marginBottom: 2 }}>
+                  {AdditionalText3}
+                </Typography>
+              )}
             </CardContent>
           </Collapse>
         </Card>

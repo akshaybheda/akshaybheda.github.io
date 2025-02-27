@@ -97,7 +97,6 @@ function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
                 <Button
@@ -120,9 +119,16 @@ function Navbar() {
                       }
                     }
                   }}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 0,
+                    display: "block",
+                    color: mode == "light" ? "black" : "white",
+                    p: 1,
+                  }}
                 >
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                  <Typography sx={{ textAlign: "center" }}>
+                    {page}
+                  </Typography>
                 </Button>
               ))}
             </Menu>

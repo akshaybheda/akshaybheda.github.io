@@ -27,6 +27,7 @@ export default function Techstack() {
         fontWeight="bold"
         gutterBottom
         align="center"
+        marginTop={4}
       >
         Tools I utilize consist of, but are not restricted to
       </Typography>
@@ -34,7 +35,7 @@ export default function Techstack() {
         container
         maxWidth="lg"
         alignItems="center"
-        spacing={6}
+        spacing={{ xs: 1, md: 2 }}
         marginTop={3}
       >
         {TechIconsSource.map((item, index: number) => (
@@ -51,7 +52,9 @@ export default function Techstack() {
                 alt={item.Title}
                 sx={{ height: 80, objectFit: "contain" }}
               />
-              <CardContent sx={{ textAlign: "center" }}>
+              <CardContent
+                sx={{ textAlign: "center", padding: { xs: 0, md: "2rem" } }}
+              >
                 <Typography variant="body1" sx={{ color: "text.secondary" }}>
                   {item.Title}
                 </Typography>

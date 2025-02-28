@@ -1,11 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import Homepage from "./components/Homepage/Homepage.tsx";
+import "./App.css";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Layout from "./components/Layout.tsx";
-import Project from "./components/Projects/Project.tsx";
+import Layout from "./Layout.tsx";
+import Project from "../components/Projects/Project.tsx";
+import Homepage from "../components/Homepage/Homepage.tsx";
 
 const theme = createTheme({
   colorSchemes: {

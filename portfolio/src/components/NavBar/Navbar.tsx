@@ -16,10 +16,10 @@ import {
   Phone,
 } from "@mui/icons-material";
 const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Resume"];
-import Resume from "../assets/resume.pdf";
+import Resume from "../../assets/resume.pdf";
 import Menu from "@mui/material/Menu";
 import React from "react";
-import { SiteIcon } from "../assets/FavIcon";
+import { SiteIcon } from "../../assets/FavIcon";
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(

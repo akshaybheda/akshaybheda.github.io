@@ -4,6 +4,7 @@ import Grid2 from "@mui/material/Grid2";
 import MyPic from "../../assets/image.jpg";
 import Resume from "../../assets/resume.pdf";
 import { useEffect } from "react";
+import { MyDetails } from "./data/intro";
 
 export default function MainContent() {
   const theme = useTheme();
@@ -27,7 +28,6 @@ export default function MainContent() {
 
   return (
     <Box
-      id="Home"
       sx={{
         minHeight: { md: "80vh" },
         bgcolor: theme.palette.background.default,
@@ -40,12 +40,7 @@ export default function MainContent() {
         paddingRight: { xs: 2, md: 3 },
       }}
     >
-      <Grid2
-        container
-        spacing={4}
-        maxWidth={{ md: "lg" }}
-        alignItems="center"
-      >
+      <Grid2 container spacing={4} maxWidth={{ md: "lg" }} alignItems="center">
         <Grid2 size={{ xs: 12, md: 6 }}>
           <Typography
             variant="h1"
@@ -57,15 +52,7 @@ export default function MainContent() {
             Curious Developer
           </Typography>
           <Typography variant="body1" gutterBottom align="justify">
-            Hey there! I love building scalable web applications and
-            high-performance backend systems, ensuring they are efficient,
-            maintainable, and secure. I work primarily with .NET on the backend
-            and React on the frontend, following clean architecture principles
-            and modern best practices. I’m a firm believer in writing
-            tests—Playwright for integration, Jest/xUnit for unit tests, and k6
-            (Grafana) for performance benchmarking. Beyond coding, I enjoy
-            tackling complex problems, optimizing performance, and continuously
-            learning new technologies to stay ahead.
+            {MyDetails}
           </Typography>
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
             <Button

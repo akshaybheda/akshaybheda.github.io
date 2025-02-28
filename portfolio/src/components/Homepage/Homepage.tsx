@@ -5,7 +5,9 @@ import Techstack from "../Techstack/Techstack";
 function Homepage() {
   return (
     <>
-      <MyInfo />
+      <div id="Home">
+        <MyInfo />
+      </div>
       <div id="Timeline">
         <MyTimeLine />
       </div>

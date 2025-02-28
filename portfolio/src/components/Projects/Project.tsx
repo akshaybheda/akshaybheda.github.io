@@ -4,6 +4,7 @@ import { ProjectsData } from "./data/ProjectsData";
 import ProjectCard from "./ProjectCard";
 import { useEffect } from "react";
 import { Paper, Typography, List, ListItem } from "@mui/material";
+import { DayInMyLife } from "./data/DayInMyLife";
 export default function Project() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -29,16 +30,7 @@ export default function Project() {
       </Typography>
       <Paper elevation={3} sx={{ margin: "16px" }}>
         <Typography margin={2} variant="body1" align="justify">
-          As a senior developer in a team of six, I take on a broad range of
-          responsibilities across multiple web applications—about six in total.
-          While I primarily focus on two, I also contribute to key features in
-          the others whenever needed. Beyond development, I oversee security,
-          ensuring compliance by monitoring and addressing vulnerabilities from
-          Mend/WhiteSource scans and ZAP active/passive scans. I proactively
-          apply fixes to maintain system integrity and keep our applications
-          secure. I’ve been told my role has evolved into that of a 'team
-          enabler'—jumping in wherever I’m needed, solving problems, and helping
-          the team move forward.
+          {DayInMyLife}
         </Typography>
       </Paper>
       <Paper elevation={3} sx={{ margin: "16px" }}>

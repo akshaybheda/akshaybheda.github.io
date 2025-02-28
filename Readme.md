@@ -46,7 +46,7 @@ This portfolio is deployed using GitHub Pages. To deploy your own version, follo
   ```
 2. **Deploy to GitHub Pages**:
   ```bash
-  npm run deploy
+  npm run gh-pages
   ```
 
 ## Contributing

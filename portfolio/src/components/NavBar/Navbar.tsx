@@ -15,7 +15,7 @@ import {
   LinkedIn,
   Phone,
 } from "@mui/icons-material";
-const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Resume"];
+const pages = ["Home", "Timeline", "Projects", "Tech Stack", "Open Source", "Resume"];
 import Resume from "../../assets/resume.pdf";
 import Menu from "@mui/material/Menu";
 import React from "react";
@@ -106,6 +106,8 @@ function Navbar() {
                       window.open(Resume, "_blank"); // Open resume in new tab
                     } else if (page === "Projects") {
                       window.location.hash = "#/project"; // Use hash-based navigation
+                    } else if (page === "Open Source") {
+                      window.location.hash = "#/opensource"; // Use hash-based navigation
                     } else {
                       if (window.location.hash !== "#/") {
                         // Store target section in sessionStorage
@@ -147,6 +149,8 @@ function Navbar() {
                     window.open(Resume, "_blank"); // Open resume in new tab
                   } else if (page === "Projects") {
                     window.location.hash = "#/project"; // Use hash-based navigation
+                  } else if (page === "Open Source") {
+                    window.location.hash = "#/opensource"; // Use hash-based navigation
                   } else {
                     if (window.location.hash !== "#/") {
                       // Store target section in sessionStorage

@@ -52,7 +52,7 @@ export default function ProjectCard(props: ProjectInfo) {
           <CardContent>
             <Typography variant="body1">{Description}</Typography>
           </CardContent>
-          <CardActions title="Learn More!" disableSpacing sx={{padding: 0}}>
+          <CardActions title="Learn More!" disableSpacing sx={{ padding: 0 }}>
             <ExpandMore
               expand={expanded}
               data-expanded={expanded}

@@ -99,39 +99,39 @@ function Navbar() {
               onClose={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={() => {
-                      const slug = page.replace(/\s+/g, "-").toLowerCase();
-                      if (page === "Resume") {
-                        window.open(Resume, "_blank"); // Open resume in new tab
-                      } else if (page === "Projects") {
-                        window.location.hash = "#/project"; // Use hash-based navigation
-                      } else if (page === "Open Source") {
-                        window.location.hash = "#/opensource"; // Use hash-based navigation
+                <Button
+                  key={page}
+                  onClick={() => {
+                    const slug = page.replace(/\s+/g, "-").toLowerCase();
+                    if (page === "Resume") {
+                      window.open(Resume, "_blank"); // Open resume in new tab
+                    } else if (page === "Projects") {
+                      window.location.hash = "#/project"; // Use hash-based navigation
+                    } else if (page === "Open Source") {
+                      window.location.hash = "#/opensource"; // Use hash-based navigation
+                    } else {
+                      if (window.location.hash !== "#/") {
+                        // Store target section in sessionStorage
+                        sessionStorage.setItem("scrollTo", slug);
+                        window.location.hash = "#/"; // Redirect to homepage
                       } else {
-                        if (window.location.hash !== "#/") {
-                          // Store target section in sessionStorage
-                          sessionStorage.setItem("scrollTo", slug);
-                          window.location.hash = "#/"; // Redirect to homepage
-                        } else {
-                          const el = document.getElementById(slug);
-                          el?.scrollIntoView({ behavior: "smooth", block: "start" });
-                        }
+                        const el = document.getElementById(slug);
+                        el?.scrollIntoView({ behavior: "smooth", block: "start" });
                       }
-                    }}
-                    sx={{
-                      my: 0,
-                      display: "block",
-                      color: mode == "light" ? "black" : "white",
-                      p: 1,
-                    }}
-                  >
-                    <Typography sx={{ textAlign: "center" }}>
-                      {page}
-                    </Typography>
-                  </Button>
-                ))}
+                    }
+                  }}
+                  sx={{
+                    my: 0,
+                    display: "block",
+                    color: mode == "light" ? "black" : "white",
+                    p: 1,
+                  }}
+                >
+                  <Typography sx={{ textAlign: "center" }}>
+                    {page}
+                  </Typography>
+                </Button>
+              ))}
             </Menu>
           </Box>
           <Box

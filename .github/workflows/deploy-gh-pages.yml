@@ -1,0 +1,37 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('portfolio/package-lock.json', 'portfolio/pnpm-lock.yaml', 'portfolio/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies (portfolio)
+        run: npm install --prefix portfolio
+
+      - name: Build (portfolio)
+        run: npm run build --prefix portfolio
+
+      - name: Deploy to gh-pages
+        run: npm run gh-pages --prefix portfolio
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

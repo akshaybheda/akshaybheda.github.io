@@ -39,6 +39,40 @@ export default function Opensource() {
               Discovered that Cancellation token's are not respected by SoapCore library, Investigated it and suggested fix <a href="https://github.com/DigDes/SoapCore/pull/1137">More info in Pr!</a>, that also led to discovery that there's an issue with .Net Framework XDocument.LoadAsync method, even though it's marked async
               Internally it's still a sync method.<a href="https://github.com/dotnet/runtime/issues/114555">More info here!</a>
             </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexDirection: 'column', padding: 2 }}>
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <a href="https://github.com/DigDes/SoapCore/pull/1137" target="_blank" rel="noreferrer">
+                  <img src="https://img.shields.io/badge/PR-%231137-blue" alt="PR #1137" />
+                </a>
+                <a href="https://github.com/DigDes/SoapCore" target="_blank" rel="noreferrer">
+                  <img src="https://img.shields.io/github/stars/DigDes/SoapCore.svg?style=social&label=Stars" alt="SoapCore stars" />
+                </a>
+              </Box>
+              {/* code snippet removed as requested */}
+            </Box>
+          </Paper>
+        </ListItem>
+        <ListItem>
+          <Paper elevation={3} sx={{ margin: "16px" }}>
+            <Typography margin={2} variant="body1" align="justify">
+              I created and maintain <a href="https://github.com/akshaybheda/vitest-azure-reporter">vitest-azure-reporter</a>,
+              a Vitest reporter that integrates with Azure DevOps Test Plans to automatically publish test results.
+              It extracts test case IDs from test names or Vitest annotations, creates and completes test runs,
+              and supports flexible configuration for mapping test points and environments. The package is
+              published as <a href="https://www.npmjs.com/package/@akshaybheda/vitest-azure-reporter">@akshaybheda/vitest-azure-reporter</a>
+              and targets modern Node.js (ES module) environments.
+            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexDirection: 'column', padding: 2 }}>
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <a href="https://www.npmjs.com/package/@akshaybheda/vitest-azure-reporter" target="_blank" rel="noreferrer">
+                  <img src="https://img.shields.io/npm/v/@akshaybheda/vitest-azure-reporter.svg" alt="npm version" />
+                </a>
+                <a href="https://github.com/akshaybheda/vitest-azure-reporter" target="_blank" rel="noreferrer">
+                  <img src="https://img.shields.io/github/stars/akshaybheda/vitest-azure-reporter.svg?style=social&label=Stars" alt="Repo stars" />
+                </a>
+              </Box>
+              {/* code snippet removed as requested */}
+            </Box>
           </Paper>
         </ListItem>
         <ListItem>

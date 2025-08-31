@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Agents guide](https://img.shields.io/badge/agents-guidelines-blue.svg)](.github/agents.md)
+
 Welcome to my portfolio! This project showcases my work and skills using modern web development technologies.
 
 ## Technologies Used

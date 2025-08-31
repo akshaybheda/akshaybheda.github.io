@@ -31,6 +31,25 @@ jobs:
       - name: Build (portfolio)
         run: npm run build --prefix portfolio
 
+      - name: Configure Git identity for deploy
+        env:
+          DEPLOY_NAME: ${{ secrets.DEPLOY_NAME }}
+          DEPLOY_EMAIL: ${{ secrets.DEPLOY_EMAIL }}
+        run: |
+          # Use provided secrets if available (set DEPLOY_NAME and DEPLOY_EMAIL in repo secrets),
+          # otherwise fall back to the actor name and the actor noreply email
+          if [ -n "$DEPLOY_NAME" ]; then
+            git config --global user.name "$DEPLOY_NAME"
+          else
+            git config --global user.name "$GITHUB_ACTOR"
+          fi
+
+          if [ -n "$DEPLOY_EMAIL" ]; then
+            git config --global user.email "$DEPLOY_EMAIL"
+          else
+            git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          fi
+
       - name: Deploy to gh-pages
         run: npm run gh-pages --prefix portfolio
         env:

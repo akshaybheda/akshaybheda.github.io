@@ -40,6 +40,17 @@ export default function Project() {
         <List dense={true}>
           <ListItem>
             <Typography variant="body2" align="justify">
+              Led migration of company reporting from on-prem Power BI Report
+              Server to Power BI Service (cloud). Redesigned datasets to
+              centralize metrics in Azure SQL, implemented incremental refresh
+              and optimized DAX queries for large datasets, added row-level
+              security for multi-tenant reports, and automated deployments
+              using CI/CD pipelines. The migration improved report reliability
+              and simplified operational management.
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="body2" align="justify">
               Migrated web application from Angular 1.8 to React 18 with a
               complete re-write
             </Typography>

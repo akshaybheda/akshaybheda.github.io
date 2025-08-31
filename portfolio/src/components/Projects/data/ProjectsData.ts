@@ -2,18 +2,18 @@ import { ProjectInfo } from "../types/ProjectInfo";
 
 export const ProjectsData: ProjectInfo[] = [
   {
+    Title: "BUDDI WebService (Backbone of Company, 15M Requests/Day)",
+    Description: "Redesigned the mission-critical URL Discovery Service into .NET Core, enabling seamless access to URLs for all applications and services in my company. Handling 15 million requests daily with a blazing-fast 1–2 ms response time, this service is the backbone of our ecosystem—if it goes down, all applications and services go down.",
+    AdditionalText1: "This service is based on a microservices architecture, with a RESTful API and a Azure Table Service. It’s hosted on Azure, with a CI/CD pipeline in Azure DevOps.",
+    AdditionalText2: "This service supports SOAP and Rest Protocols",
+    AdditionalText3: "Interesting thing to know about this service, During the first deployment of the URL Discovery Service, performance lagged behind our benchmarks. After deep investigation, I traced the issue to the SoapCore NuGet package—essential for SOAP support in .NET Core. I fixed the problem in its codebase, upgraded our version, and successfully deployed the service at peak efficiency. This not only resolved a critical bottleneck but also marked my first impactful contribution to open source.",
+  },
+  {
     Title: "Migrating From Qlik to PowerBI Embed (Saved $1 Million+)",
     Description: "Led a migration from Qlik Sense to Power BI Embedded, saving the company over $1 Million in licensing and operational costs while ensuring a smooth transition.",
     AdditionalText1: "I was responsible for migrating the existing Qlik Sense reports to Power BI Embedded. This involved understanding the existing reports, designing new reports in Power BI, and ensuring that the new reports met the same requirements as the old ones.",
     AdditionalText2: "The migration process included thorough testing and validation to ensure data integrity and report accuracy. The project was completed in a 1-month time span, migrating 12 reports with a total data volume of around 10 GB.",
     AdditionalText3: "It involved setting up Row-Level Security (RLS) for those reports and ensuring improved performance compared to the previous Qlik Sense reports. The migration was completed successfully, with minimal disruption to users. The new Power BI reports provided enhanced functionality and improved performance.",
-  },
-  {
-    Title: "BUDDI WebService",
-    Description: "Redesigned the mission-critical URL Discovery Service into .NET Core, enabling seamless access to URLs for all applications and services in my company. Handling 60 million requests daily with a blazing-fast 1–2 ms response time, this service is the backbone of our ecosystem—if it goes down, all applications and services go down.",
-    AdditionalText1: "This service is based on a microservices architecture, with a RESTful API and a Azure Table Service. It’s hosted on Azure, with a CI/CD pipeline in Azure DevOps.",
-    AdditionalText2: "This service supports SOAP and Rest Protocols",
-    AdditionalText3: "Interesting thing to know about this service, During the first deployment of the URL Discovery Service, performance lagged behind our benchmarks. After deep investigation, I traced the issue to the SoapCore NuGet package—essential for SOAP support in .NET Core. I fixed the problem in its codebase, upgraded our version, and successfully deployed the service at peak efficiency. This not only resolved a critical bottleneck but also marked my first impactful contribution to open source.",
   },
   {
     Title: "Bentley Admin Portal",

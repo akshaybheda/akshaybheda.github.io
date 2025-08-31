@@ -5,13 +5,13 @@ import Techstack from "../Techstack/Techstack";
 function Homepage() {
   return (
     <>
-      <div id="Home">
+  <div id="home">
         <MyInfo />
       </div>
-      <div id="Timeline">
+  <div id="timeline">
         <MyTimeLine />
       </div>
-      <div id="Tech Stack">
+  <div id="tech-stack">
         <Techstack />
       </div>
     </>

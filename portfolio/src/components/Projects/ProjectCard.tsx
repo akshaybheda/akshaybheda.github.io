@@ -23,20 +23,11 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   transition: theme.transitions.create("transform", {
     duration: theme.transitions.duration.shortest,
   }),
-  variants: [
-    {
-      props: ({ expand }) => !expand,
-      style: {
-        transform: "rotate(0deg)",
-      },
-    },
-    {
-      props: ({ expand }) => !!expand,
-      style: {
-        transform: "rotate(180deg)",
-      },
-    },
-  ],
+  transform: "rotate(0deg)",
+  // rotate when `data-expanded` attribute is true (set below via prop)
+  "&[data-expanded='true']": {
+    transform: "rotate(180deg)",
+  },
 }));
 
 export default function ProjectCard(props: ProjectInfo) {
@@ -64,6 +55,7 @@ export default function ProjectCard(props: ProjectInfo) {
           <CardActions title="Learn More!" disableSpacing sx={{padding: 0}}>
             <ExpandMore
               expand={expanded}
+              data-expanded={expanded}
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"

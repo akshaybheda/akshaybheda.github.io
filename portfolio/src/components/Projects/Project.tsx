@@ -69,9 +69,9 @@ export default function Project() {
       <Typography variant="h5" align="center" gutterBottom>
         Solo Achievements begin right down here!
       </Typography>
-      {ProjectsData.map((project, index) => (
+      {ProjectsData.map((project) => (
         <ProjectCard
-          key={index}
+          key={project.Title}
           Title={project.Title}
           Description={project.Description}
           AdditionalText1={project.AdditionalText1}

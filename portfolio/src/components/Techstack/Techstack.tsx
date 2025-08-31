@@ -38,8 +38,8 @@ export default function Techstack() {
         spacing={{ xs: 1, md: 2 }}
         marginTop={3}
       >
-        {TechIconsSource.map((item, index: number) => (
-          <Grid size={3} key={index}>
+        {TechIconsSource.map((item) => (
+          <Grid size={3} key={item.Title}>
             <Card
               sx={{
                 boxShadow: 0,
@@ -50,6 +50,7 @@ export default function Techstack() {
                 component="img"
                 image={item.Image}
                 alt={item.Title}
+                loading="lazy"
                 sx={{ height: 80, objectFit: "contain" }}
               />
               <CardContent

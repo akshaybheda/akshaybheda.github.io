@@ -99,40 +99,39 @@ function Navbar() {
               onClose={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={() => {
-                    if (page === "Resume") {
-                      window.open(Resume, "_blank"); // Open resume in new tab
-                    } else if (page === "Projects") {
-                      window.location.hash = "#/project"; // Use hash-based navigation
-                    } else if (page === "Open Source") {
-                      window.location.hash = "#/opensource"; // Use hash-based navigation
-                    } else {
-                      if (window.location.hash !== "#/") {
-                        // Store target section in sessionStorage
-                        sessionStorage.setItem("scrollTo", page);
-                        window.location.hash = "#/"; // Redirect to homepage
+                  <Button
+                    key={page}
+                    onClick={() => {
+                      const slug = page.replace(/\s+/g, "-").toLowerCase();
+                      if (page === "Resume") {
+                        window.open(Resume, "_blank"); // Open resume in new tab
+                      } else if (page === "Projects") {
+                        window.location.hash = "#/project"; // Use hash-based navigation
+                      } else if (page === "Open Source") {
+                        window.location.hash = "#/opensource"; // Use hash-based navigation
                       } else {
-                        document.getElementById(page)?.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
+                        if (window.location.hash !== "#/") {
+                          // Store target section in sessionStorage
+                          sessionStorage.setItem("scrollTo", slug);
+                          window.location.hash = "#/"; // Redirect to homepage
+                        } else {
+                          const el = document.getElementById(slug);
+                          el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
                       }
-                    }
-                  }}
-                  sx={{
-                    my: 0,
-                    display: "block",
-                    color: mode == "light" ? "black" : "white",
-                    p: 1,
-                  }}
-                >
-                  <Typography sx={{ textAlign: "center" }}>
-                    {page}
-                  </Typography>
-                </Button>
-              ))}
+                    }}
+                    sx={{
+                      my: 0,
+                      display: "block",
+                      color: mode == "light" ? "black" : "white",
+                      p: 1,
+                    }}
+                  >
+                    <Typography sx={{ textAlign: "center" }}>
+                      {page}
+                    </Typography>
+                  </Button>
+                ))}
             </Menu>
           </Box>
           <Box
@@ -145,6 +144,7 @@ function Navbar() {
               <Button
                 key={page}
                 onClick={() => {
+                  const slug = page.replace(/\s+/g, "-").toLowerCase();
                   if (page === "Resume") {
                     window.open(Resume, "_blank"); // Open resume in new tab
                   } else if (page === "Projects") {
@@ -154,13 +154,11 @@ function Navbar() {
                   } else {
                     if (window.location.hash !== "#/") {
                       // Store target section in sessionStorage
-                      sessionStorage.setItem("scrollTo", page);
+                      sessionStorage.setItem("scrollTo", slug);
                       window.location.hash = "#/"; // Redirect to homepage
                     } else {
-                      document.getElementById(page)?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
+                      const el = document.getElementById(slug);
+                      el?.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
                   }
                 }}
@@ -175,13 +173,13 @@ function Navbar() {
               display: { justifyContent: "end" },
             }}
           >
-            <IconButton href="tel:+1-980-358-0053">
+            <IconButton component="a" href="tel:+1-980-358-0053" aria-label="call">
               <Phone />
             </IconButton>
-            <IconButton href="https://www.linkedin.com/in/akshaybheda/">
+            <IconButton component="a" href="https://www.linkedin.com/in/akshaybheda/" aria-label="linkedin">
               <LinkedIn />
             </IconButton>
-            <IconButton href="https://github.com/akshaybheda">
+            <IconButton component="a" href="https://github.com/akshaybheda" aria-label="github">
               <GitHub />
             </IconButton>
             <IconButton onClick={toggleDarkMode}>

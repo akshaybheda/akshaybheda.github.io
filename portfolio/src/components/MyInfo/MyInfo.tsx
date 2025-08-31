@@ -10,21 +10,27 @@ export default function MainContent() {
   const theme = useTheme();
 
   useEffect(() => {
-    const scrollTo = sessionStorage.getItem("scrollTo");
+    const handleHashChange = () => {
+      const scrollTo = sessionStorage.getItem("scrollTo");
+      if (scrollTo && window.location.hash === "#/") {
+        setTimeout(() => {
+          const element = document.getElementById(scrollTo);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          sessionStorage.removeItem("scrollTo");
+        }, 100);
+      } else if (window.location.hash === "#/project") {
+        // Force scroll to top when navigating to /project
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
 
-    if (scrollTo && window.location.hash === "#/") {
-      setTimeout(() => {
-        const element = document.getElementById(scrollTo);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-        sessionStorage.removeItem("scrollTo");
-      }, 100);
-    } else if (window.location.hash === "#/project") {
-      // Force scroll to top when navigating to /project
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [window.location.hash]);
+    // run on mount (in case user landed directly)
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <Box

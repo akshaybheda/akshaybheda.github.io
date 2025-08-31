@@ -35,6 +35,10 @@ export default function Opensource() {
               <a href="https://github.com/DigDes/SoapCore/issues/1026"> My fix </a> was merged into the library, benefiting all users running high-volume SOAP services.
               Beyond this, I also contributed improvements to exception handling and other stability enhancements to ensure better resilience in production environments.
             </Typography>
+            <Typography margin={2} variant="body1" align="justify">
+              Discovered that Cancellation token's are not respected by SoapCore library, Investigated it and suggested fix <a href="https://github.com/DigDes/SoapCore/pull/1137">More info in Pr!</a>, that also led to discovery that there's an issue with .Net Framework XDocument.LoadAsync method, even though it's marked async
+              Internally it's still a sync method.<a href="https://github.com/dotnet/runtime/issues/114555">More info here!</a>
+            </Typography>
           </Paper>
         </ListItem>
         <ListItem>

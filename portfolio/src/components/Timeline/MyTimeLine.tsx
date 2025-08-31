@@ -41,7 +41,16 @@ export default function MyTimeLine() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            Jan 2023 - Current (Software Engineer II at Bentley Systems)
+            Apr 2025 - Current (Senior Software Engineer at Bentley Systems)
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            Jan 2023 - Apr 2025 (Software Engineer II at Bentley Systems)
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>

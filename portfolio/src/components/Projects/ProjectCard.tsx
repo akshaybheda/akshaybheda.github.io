@@ -3,7 +3,8 @@ import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
+import Box from "@mui/material/Box"; // Added Box import
+// CardActions removed to keep expand button inline with description
 import Collapse from "@mui/material/Collapse";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -50,19 +51,21 @@ export default function ProjectCard(props: ProjectInfo) {
         <Card>
           <CardHeader title={Title} />
           <CardContent>
-            <Typography variant="body1">{Description}</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Typography variant="body1" sx={{ flex: 1 }}>
+                {Description}
+              </Typography>
+              <ExpandMore
+                expand={expanded}
+                data-expanded={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </Box>
           </CardContent>
-          <CardActions title="Learn More!" disableSpacing sx={{ padding: 0 }}>
-            <ExpandMore
-              expand={expanded}
-              data-expanded={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               {AdditionalText1 && (

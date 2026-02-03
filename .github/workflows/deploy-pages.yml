@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies (portfolio)
         run: npm ci --prefix portfolio
 
+      - name: Run tests (portfolio)
+        run: npm run test -- --prefix portfolio --run
+
       - name: Build (portfolio)
         run: npm run build --prefix portfolio
 

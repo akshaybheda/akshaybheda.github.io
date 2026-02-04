@@ -5,9 +5,13 @@ import { Typography, Tabs, Tab, Container } from "@mui/material";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import KeyIcon from "@mui/icons-material/Key";
 import CompareIcon from "@mui/icons-material/Compare";
+import CodeIcon from "@mui/icons-material/Code";
+import LinkIcon from "@mui/icons-material/Link";
 import JsonFormatter from "./JsonFormatter";
 import JwtViewer from "./JwtViewer";
 import TextComparer from "./TextComparer";
+import HtmlEncoderDecoder from "./HtmlEncoderDecoder";
+import UrlEncoderDecoder from "./UrlEncoderDecoder";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -109,6 +113,18 @@ export default function DevTools() {
                             label="Text Comparer"
                             {...a11yProps(2)}
                         />
+                        <Tab
+                            icon={<CodeIcon />}
+                            iconPosition="start"
+                            label="HTML Encoder"
+                            {...a11yProps(3)}
+                        />
+                        <Tab
+                            icon={<LinkIcon />}
+                            iconPosition="start"
+                            label="URL Encoder"
+                            {...a11yProps(4)}
+                        />
                     </Tabs>
                 </Box>
 
@@ -120,6 +136,12 @@ export default function DevTools() {
                 </TabPanel>
                 <TabPanel value={tabValue} index={2}>
                     <TextComparer />
+                </TabPanel>
+                <TabPanel value={tabValue} index={3}>
+                    <HtmlEncoderDecoder />
+                </TabPanel>
+                <TabPanel value={tabValue} index={4}>
+                    <UrlEncoderDecoder />
                 </TabPanel>
             </Container>
         </Box>

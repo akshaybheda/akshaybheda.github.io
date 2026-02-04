@@ -103,9 +103,17 @@ export default function JsonFormatter() {
         }}
       >
         <Box>
-          <Typography variant="subtitle2" sx={{ mb: 1 }}>
-            Input JSON
-          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mb: 1,
+              minHeight: "40px",
+            }}
+          >
+            <Typography variant="subtitle2">Input JSON</Typography>
+          </Box>
           <TextField
             multiline
             fullWidth
@@ -131,6 +139,7 @@ export default function JsonFormatter() {
               alignItems: "center",
               justifyContent: "space-between",
               mb: 1,
+              minHeight: "40px",
             }}
           >
             <Typography variant="subtitle2">Output</Typography>

@@ -48,7 +48,7 @@ export default function Opensource() {
           </Paper>
         </ListItem>
         <ListItem>
-          <Paper elevation={3} sx={{ margin: "16px" }}>
+          <Paper elevation={3} sx={{ margin: "16px", width: '100%' }}>
             <Typography margin={2} variant="body1" align="justify">
               I started using <a href="https://github.com/DigDes/">SoapCore</a> in my application to enable SOAP services in .NET Core. During load testing, I encountered a severe performance bottleneck when the server received more than 500 requests per second.
               After investigation, I diagnosed the issue as an improper async/await implementation, which was blocking threads and causing thread starvation.
@@ -57,8 +57,8 @@ export default function Opensource() {
               Beyond this, I also contributed improvements to exception handling and other stability enhancements to ensure better resilience in production environments.
             </Typography>
             <Typography margin={2} variant="body1" align="justify">
-              Discovered that Cancellation token's are not respected by SoapCore library, Investigated it and suggested fix <a href="https://github.com/DigDes/SoapCore/pull/1137">More info in Pr!</a>, that also led to discovery that there's an issue with .Net Framework XDocument.LoadAsync method, even though it's marked async
-              Internally it's still a sync method.<a href="https://github.com/dotnet/runtime/issues/114555">More info here!</a>
+              I discovered that <strong>Cancellation tokens</strong> were not being respected by the SoapCore library. After investigating, I submitted a <a href="https://github.com/DigDes/SoapCore/pull/1137">fix</a> to resolve this.
+              My investigation also led to the discovery of an underlying issue in the <strong>.NET Framework</strong> where <code>XDocument.LoadAsync</code> operates synchronously despite its name, a finding I documented in the <a href="https://github.com/dotnet/runtime/issues/114555">dotnet/runtime</a> repository.
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexDirection: 'column', padding: 2 }}>
               <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
@@ -74,7 +74,7 @@ export default function Opensource() {
           </Paper>
         </ListItem>
         <ListItem>
-          <Paper elevation={3} sx={{ margin: "16px" }}>
+          <Paper elevation={3} sx={{ margin: "16px", width: '100%' }}>
             <Typography margin={2} variant="body1" align="justify">
               I created and maintain <a href="https://github.com/akshaybheda/vitest-azure-reporter">vitest-azure-reporter</a>,
               a Vitest reporter that integrates with Azure DevOps Test Plans to automatically publish test results.
@@ -97,7 +97,7 @@ export default function Opensource() {
           </Paper>
         </ListItem>
         <ListItem>
-          <Paper elevation={3} sx={{ margin: "16px" }}>
+          <Paper elevation={3} sx={{ margin: "16px", width: '100%' }}>
             <Typography margin={2} variant="body1" align="justify">
               I developed an Azure DevOps extension, <a href="https://marketplace.visualstudio.com/items?itemName=akshay-bheda.list-followed-wikis">List Followed Wikis</a>, to address the lack of a built-in way to view followed wiki pages.
               In Azure DevOps, users have to manually bookmark and search for their followed pages, which is inefficient.

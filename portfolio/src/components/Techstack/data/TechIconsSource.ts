@@ -23,7 +23,7 @@ export const TechIconsSource: IconConfig[] = [
   },
   {
     Title: "Scss",
-    Image: "https://www.svgrepo.com/show/374068/scss.svg",
+    Image: "https://unpkg.com/simple-icons@latest/icons/sass.svg",
   },
   {
     Title: "Git",
@@ -65,5 +65,17 @@ export const TechIconsSource: IconConfig[] = [
   {
     Title: "K6/Grafana Performance Suite",
     Image: "https://www.svgrepo.com/show/353829/grafana.svg",
+  },
+  {
+    Title: "Amplitude",
+    Image: "https://www.vectorlogo.zone/logos/amplitude/amplitude-icon.svg",
+  },
+  {
+    Title: "PowerBI",
+    Image: "https://www.vectorlogo.zone/logos/microsoft_powerbi/microsoft_powerbi-icon.svg",
+  },
+  {
+    Title: "Vite",
+    Image: "https://www.svgrepo.com/show/374167/vite.svg",
   },
 ];

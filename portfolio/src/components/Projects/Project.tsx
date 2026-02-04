@@ -40,6 +40,16 @@ export default function Project() {
         <List dense={true}>
           <ListItem>
             <Typography variant="body2" align="justify">
+              Leading the development of a <strong>Domain Claiming</strong> feature,
+              enabling users to verify ownership of their domains using{" "}
+              <strong>TXT records</strong> (DNS) and{" "}
+              <strong>HTML-based file verification</strong>. Designed and
+              implemented the verification logic to ensure security and
+              seamless integration for enterprise customers.
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="body2" align="justify">
               Led migration of company reporting from on-prem Power BI Report
               Server to Power BI Service (cloud). Redesigned datasets to
               centralize metrics in Azure SQL, implemented incremental refresh

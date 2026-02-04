@@ -27,6 +27,27 @@ export default function Opensource() {
       </Typography>
       <List dense={true}>
         <ListItem>
+          <Paper elevation={3} sx={{ margin: "16px", width: '100%' }}>
+            <Typography margin={2} variant="body1" align="justify">
+              Contributed a critical fix to the <a href="https://github.com/snowflakedb/snowflake-connector-net">Snowflake .NET Connector</a> regarding culture-invariant parsing.
+              The issue was exceptionally subtle and hard to debug: in certain locales like Turkish, the character 'i' upper-cases to 'İ' (with a dot), which caused enum parsing for session properties to fail silently or throw cryptic errors depending on the system configuration.
+              I identified the root cause in the non-culture-invariant use of <code>Enum.Parse</code> and proposed the fix to use <code>ignoreCase: true</code> with culture-invariant comparisons.
+              This ensured the driver's reliability for users worldwide, regardless of their machine's regional settings.
+              My contribution was acknowledged and integrated into the official repository via <a href="https://github.com/snowflakedb/snowflake-connector-net/pull/1296">PR #1296</a> (refining my initial <a href="https://github.com/snowflakedb/snowflake-connector-net/pull/1294">PR #1294</a>).
+            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexDirection: 'column', padding: 2 }}>
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <a href="https://github.com/snowflakedb/snowflake-connector-net/pull/1296" target="_blank" rel="noreferrer">
+                  <img src="https://img.shields.io/badge/PR-%231296-blue" alt="PR #1296" />
+                </a>
+                <a href="https://github.com/snowflakedb/snowflake-connector-net" target="_blank" rel="noreferrer">
+                  <img src="https://img.shields.io/github/stars/snowflakedb/snowflake-connector-net.svg?style=social&label=Stars" alt="Snowflake stars" />
+                </a>
+              </Box>
+            </Box>
+          </Paper>
+        </ListItem>
+        <ListItem>
           <Paper elevation={3} sx={{ margin: "16px" }}>
             <Typography margin={2} variant="body1" align="justify">
               I started using <a href="https://github.com/DigDes/">SoapCore</a> in my application to enable SOAP services in .NET Core. During load testing, I encountered a severe performance bottleneck when the server received more than 500 requests per second.
